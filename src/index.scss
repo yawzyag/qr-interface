@@ -1,0 +1,18 @@
+@import "./theme/fonts.scss";
+
+html {
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f4;
+  font-family: $font-lato;
+  font-size: 16px;
+}
+
+.animated {
+  animation: bounce ease-in 1s 2;
+}

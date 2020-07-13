@@ -1,0 +1,13 @@
+@import "../../theme/colors";
+.buttonContainer {
+  border: none;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background-color: $primary-color;
+  color: $text-color;
+  border-radius: 5px;
+}
+.buttonContainer:hover {
+  background-color: rgba($color: $primary-color, $alpha: 0.9);
+}

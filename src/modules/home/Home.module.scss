@@ -1,0 +1,50 @@
+@import "../../theme/colors";
+
+@mixin box-shadow($params) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+
+.homeContainer {
+  width: 100vw;
+  height: calc(100vh - 48px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .textContainer {
+    background-color: rgba($color: $primary-color, $alpha: 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    border-radius: 10px;
+    @include box-shadow($shadow);
+    max-width: 90%;
+    @media (max-width: "768px") {
+      flex-direction: column;
+    }
+    img {
+      max-width: 30vw;
+    }
+    .textDetail {
+      padding: 5px;
+      color: $text-color;
+      flex: 1;
+      justify-self: flex-end;
+      h1 {
+        text-transform: capitalize;
+        padding: 20px 0;
+      }
+      ul {
+        list-style-position: inside;
+        li {
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

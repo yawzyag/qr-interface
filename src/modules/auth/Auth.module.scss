@@ -1,0 +1,31 @@
+.formAuthContainer {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 10vh auto;
+  width: 50vw;
+  display: flex;
+  padding: 20px;
+  @media (max-width: "768px") {
+    width: 100%;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .inputsContainer {
+      display: flex;
+      flex-direction: column;
+      p {
+        color: red;
+        font-size: 0.7rem;
+      }
+    }
+  }
+  .buttonContainer {
+    height: 48px;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
