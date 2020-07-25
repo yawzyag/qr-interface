@@ -1,34 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
-import {
-  formAuthContainer,
-  inputsContainer,
-  buttonContainer,
-} from "./Auth.module.scss";
 import { useForm } from "react-hook-form";
 import SimpleInput from "../../components/input/SimpleInput";
 import SimpleButton from "../../components/button/SimpleButton";
 import { useHistory } from "react-router-dom";
-import { isAuth } from "../../utils/auth";
 import { post } from "../../utils/axios";
+import { formBussines, buttonContainer } from "./Form.module.scss";
 
-const Login = () => {
+const FormBussines = () => {
   let history = useHistory();
   const [loading, setLoading] = useState(false);
   const { register, errors, handleSubmit, formState } = useForm({
-    mode: "onChange"
+    mode: "onChange",
   });
   const onSubmit = async (data) => {
     if (loading) return;
     const objToSend = {
-      email: data.emailField,
-      password: data.passwordField,
+      email: data.nameField,
+      password: data.directionField,
     };
+    console.log(data)
     setLoading(true);
     try {
-      const resp = await post("login", objToSend);
+      /* const resp = await post("login", objToSend);
       localStorage.setItem("authToken", resp.data.accessToken);
-      history.push("/");
+      history.push("/"); */
+      toast.success("negocio creado!")
     } catch (error) {
       console.log(error.response.data.error);
       toast.error(error.response.data.error);
@@ -36,38 +33,38 @@ const Login = () => {
       setLoading(false);
     }
   };
-  useEffect(() => {
-    let auth = isAuth();
-    if (auth) {
-      history.push("/");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return (
-    <div className={formAuthContainer}>
+    <div className={formBussines}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={inputsContainer}>
+        <div>
           <SimpleInput
             autoFocus={true}
-            name={"emailField"}
-            type="email"
+            name={"nameField"}
+            type="text"
             refe={register({ required: true })}
-            label={"Email"}
+            label={"Nombre de negocio"}
           />
-          {errors.emailField && <p>El email es requerido</p>}
+          {errors.nameField && <p>El nombre es requerido</p>}
           <SimpleInput
-            name={"passwordField"}
-            type="password"
+            name={"directionField"}
+            type="text"
             refe={register({ required: true })}
-            label={"Contraseña"}
+            label={"Dirección"}
           />
-          {errors.passwordField && <p>La contraseña es requerida</p>}
+          {errors.directionField && <p>La dirección es requerida</p>}
+          <SimpleInput
+            name={"descriptionField"}
+            type="text"
+            refe={register({ required: true })}
+            label={"Descripción"}
+          />
+          {errors.descriptionField && <p>La descripción es requerida</p>}
         </div>
         <div className={buttonContainer}>
           <SimpleButton
             loading={loading}
             disabled={!formState.isValid}
-            buttonText="Iniciar sesion"
+            buttonText="Agregar"
             type="submit"
           />
         </div>
@@ -76,4 +73,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default FormBussines;

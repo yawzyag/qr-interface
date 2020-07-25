@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: center;
     li {
+      transition: all 0.4s ease-out;
       height: 48px;
       padding: 10px;
       display: flex;
@@ -24,6 +25,12 @@
           padding-right: 10px;
         }
       }
+    }
+    li:hover {
+      a {
+        color: $primary-color;
+      }
+      background-color: $text-color;
     }
     .rightMenu {
       display: flex;

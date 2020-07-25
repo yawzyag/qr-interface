@@ -1,0 +1,17 @@
+.formBussines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  padding-bottom: 0;
+  width: 90%;
+  form{
+    width: 100%;
+  }
+  .buttonContainer {
+    height: 48px;
+    width: 100%;
+    margin-top: 10px;
+  }
+}

@@ -1,22 +1,11 @@
-import React, { useState } from "react";
-import {
-  inputContainer,
-  labelContainer,
-  inputChange,
-} from "./SimpleInput.module.scss";
+import React from "react";
+import { inputContainer, labelContainer } from "./SimpleInput.module.scss";
 
 const SimpleInput = ({ type, refe, name, label, autoFocus }) => {
-  const [value, setValue] = useState("");
-
   return (
     <div className={inputContainer}>
       <input
         autoFocus={autoFocus}
-        className={value?.length > 0 ? inputChange : ""}
-        value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
         required
         name={name}
         type={type}

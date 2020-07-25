@@ -24,3 +24,10 @@ yarn-debug.log*
 yarn-error.log*
 yarn.lock
 _redirects
+
+#env
+.env    #<--------Put the custom env files here 
+.env.local 
+.env.development.local 
+.env.test.local 
+.env.production.local 

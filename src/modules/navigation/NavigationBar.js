@@ -15,7 +15,7 @@ const NavigationBar = ({ auth, setAuth }) => {
       return (
         <>
           <li>
-            <Link to="/profile">Profile</Link>
+            <Link to="/profile">Perfil</Link>
           </li>
           <li>
             <Link onClick={handleClose} to="/">
@@ -46,7 +46,11 @@ const NavigationBar = ({ auth, setAuth }) => {
             Inicio
           </Link>
         </li>
-        <div className={rightMenu}>{authMenu()}</div>
+        <div className={rightMenu}>
+        <li>
+        <Link to="/bussines">Negocios</Link>
+        </li>
+        {authMenu()}</div>
       </ul>
     </nav>
   );

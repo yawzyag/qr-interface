@@ -1,10 +1,11 @@
 import React from "react";
 import { buttonContainer } from "./SimpleButton.module.scss";
+import Loader from "../Loader"
 
-const SimpleButton = ({ type, onClick, buttonText }) => {
+const SimpleButton = ({ type, onClick, buttonText, loading, disabled }) => {
   return (
-    <button className={buttonContainer} type={type} onClick={onClick}>
-      {buttonText}
+    <button disabled={disabled} className={buttonContainer} type={type} onClick={onClick}>
+      {loading ? <Loader /> : buttonText}
     </button>
   );
 };

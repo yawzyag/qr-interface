@@ -1,0 +1,55 @@
+@import "../../theme/colors";
+.bussinesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  h3 {
+    text-align: left;
+    align-self: flex-start;
+    font-size: 2rem;
+  }
+  .bussinesList {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 900px;
+    .businessDetail {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: $blank-color;
+      border-radius: 5px;
+      width: 90%;
+      padding: 20px;
+      margin-bottom: 20px;
+      height: 35vh;
+      width: 100%;
+      .businessDetailImage {
+        flex: 1;
+        height: 30vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        img {
+          max-width: 100%;
+          max-height: 30vh;
+          border-radius: 5px;
+          object-fit: cover;
+        }
+      }
+      .businessDetailText {
+        flex: 1;
+        text-align: right;
+        h3 {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

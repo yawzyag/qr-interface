@@ -1,0 +1,97 @@
+@import "../../theme/colors";
+
+.headerUser {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 20px;
+    align-items: stretch;
+    @media(max-width: 768px) {
+        flex-direction: column;
+    }
+    .profileUser {
+        max-height: 70vh;
+        background-color: $blank-color;
+        padding: 30px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        transition: all 0.5s ease-in;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        @media(max-width: 768px) {
+            margin-right: 0px;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 90%;
+        }
+        h1 {
+            padding: 10px 0;
+            text-transform: capitalize;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+    }
+    .profileUser:hover {
+        box-shadow: $shadow;
+    }
+    .qrCode {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $blank-color;
+        padding: 30px;
+        border-radius: 20px;
+        transition: all 0.5s ease-in;
+        margin-bottom: 20px;
+        p {
+            text-transform: capitalize;
+        }
+        .qrTitle{
+            font-size: 1.2rem;
+        }
+    }
+    .qrCode:hover{
+        box-shadow: $shadow;
+    }
+    .formBussines {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $blank-color;
+        padding: 30px;
+        border-radius: 20px;
+        transition: all 0.5s ease-in;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        @media(max-width: 768px) {
+            margin-right: 0px;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: center;
+            text-transform: capitalize;
+        }
+        .clickText {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .clickText:hover {
+            color: $primary-color;
+        }
+        .qrTitle{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.headerUser::after {
+    content: '';
+    flex: auto;
+    }

@@ -7,7 +7,14 @@
   background-color: $primary-color;
   color: $text-color;
   border-radius: 5px;
+  cursor: pointer;
 }
 .buttonContainer:hover {
   background-color: rgba($color: $primary-color, $alpha: 0.9);
+}
+
+.buttonContainer:disabled,
+.buttonContainer[disabled]{
+  color: rgba($color: $text-color, $alpha: 0.7);
+  background-color: rgba($color: $primary-color, $alpha: 0.7);
 }
